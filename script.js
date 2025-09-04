@@ -190,7 +190,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  // section.classList.add('section--hidden');
+  section.classList.add('section--hidden');
 });
 
 // Lazy loading images
@@ -199,7 +199,6 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function (entries, observer) {
   const [entry] = entries;
-  // console.log(entry);
 
   if (entry.isIntersecting) return;
 
@@ -309,67 +308,4 @@ const slider = function () {
 };
 
 slider();
-////////////////////////////////////////////////////
-//learing things
 
-// Creating and inserting elements
-// const message = document.createElement('div');
-// message.classList.add('cookie-message');
-// // message.textContent = 'We use cookied for improved functionality and analytics.';
-// message.innerHTML =
-//   'We use cookied for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
-
-// // header.prepend(message);
-// header.append(message);
-// // header.append(message.cloneNode(true));
-
-// // header.before(message);
-// // header.after(message);
-
-// // Delete elements
-// document
-//   .querySelector('.btn--close-cookie')
-//   .addEventListener('click', function () {
-//     // message.remove();
-//     message.parentElement.removeChild(message);
-//   });
-
-// this is for the only one time event listener by the use of removeEventListener
-// const h1 = document.querySelector('h1');
-
-// const alertH1 = e => {
-//   alert('addEventListener : Greating from the heaing element');
-
-//   // we can remove the event listener  in any where
-//   // removeEventListener('mouseenter', alertH1);
-// };
-
-// // h1.addEventListener('mouseenter', alertH1);
-
-// setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
-
-//  propagation pratice
-
-// rgb(255,255,255)
-// const randomInt = (min, max) =>
-//   Math.floor(Math.random() * (max - min + 1) + min);
-
-// const randomColor = () =>
-//   `rgb(${randomInt(0, 225)},${randomInt(0, 225)},${randomInt(0, 225)})`;
-
-// document.querySelector('.nav__link').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('NAV', e.target, e.currentTarget);
-//   console.log(e.currentTarget === this); // true
-//   // Stop propagation actaul we are not use it in real life
-//   // e.stopPropagation();
-// });
-
-// document.querySelector('.nav__links').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('LINK', e.target, e.currentTarget);
-// });
-// document.querySelector('.nav').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log('CONTAINER', e.target, e.currentTarget);
-// });
